@@ -2,7 +2,7 @@ import React from 'react';
 import * as ReactDOM from 'react-dom';
 import useMedia from '../src/lib/useMedia';
 
-function TestComponent(props): JSX.Element {
+function TestComponent(): JSX.Element {
     const media = useMedia();
     return <div>{'Current Media Break Point is ' + media}</div>;
 }
