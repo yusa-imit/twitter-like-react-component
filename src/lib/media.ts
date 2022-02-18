@@ -1,5 +1,4 @@
-type queryName = "sm" | "md" | "lg" | "xl";
-export type availableQueryName = queryName | "xs";
+import { queryName } from "./type/queryType";
 
 
 export type queryInterface = {

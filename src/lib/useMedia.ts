@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { mediaQuery, availableQueryName, queryInterface } from './media';
+import { mediaQuery, queryInterface } from './media';
+import { availableQueryName } from './type/queryType';
 
 export default function useMedia(query?: queryInterface): availableQueryName {
     const [width, setWidth] = useState<number>(0);
