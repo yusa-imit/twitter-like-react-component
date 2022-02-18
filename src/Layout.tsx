@@ -8,7 +8,7 @@ export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
     styleWithMedia?: mediaStyle;
 }
 
-export function Layout(props: LayoutProps): JSX.Element {
+export function Layout(_props: LayoutProps): JSX.Element {
     return (
         <div className="grid justify-center min-h-screen my-0 mx-auto"></div>
     );
