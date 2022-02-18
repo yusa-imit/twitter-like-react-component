@@ -9,17 +9,23 @@ export function getStyle(
 ): CSSProperties {
     const returnStyle: CSSProperties = {};
     for (const key of Object.keys(styleWithMedia)) {
-        if(queryNameCompare(current, key as keyof typeof styleWithMedia)) break;
-        Object.assign(returnStyle, styleWithMedia[key as keyof typeof styleWithMedia])
+        if (queryNameCompare(current, key as keyof typeof styleWithMedia))
+            break;
+        Object.assign(
+            returnStyle,
+            styleWithMedia[key as keyof typeof styleWithMedia]
+        );
     }
     return returnStyle;
 }
 
-function queryNameCompare (current: availableQueryName, compare: availableQueryName) : boolean {
-    if(queryNamePriority[current] > queryNamePriority[compare]){
+function queryNameCompare(
+    current: availableQueryName,
+    compare: availableQueryName
+): boolean {
+    if (queryNamePriority[current] > queryNamePriority[compare]) {
         return true;
-    }
-    else{
+    } else {
         return false;
     }
 }
