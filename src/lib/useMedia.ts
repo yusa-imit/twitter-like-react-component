@@ -4,7 +4,7 @@ import { availableQueryName } from './type/queryType';
 
 export default function useMedia(query?: queryInterface): availableQueryName {
     const [width, setWidth] = useState<number>(0);
-    const [media, setMedia] = useState<availableQueryName>('sm');
+    const [media, setMedia] = useState<availableQueryName>('xs');
     const [calculationQuery, setCalculationQuery] = useState<queryInterface>(
         query ? query : mediaQuery
     );
