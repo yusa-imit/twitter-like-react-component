@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, ReactChild } from 'react';
-import { queryInterface } from './lib/media';
-import { mediaStyle } from './lib/type/mediaStyle';
+import { queryInterface } from '../media';
+import { mediaStyle } from '../type/mediaStyle';
 
 export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
     children?: ReactChild;
