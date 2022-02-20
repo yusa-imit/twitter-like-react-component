@@ -1,4 +1,4 @@
-import { availableQueryName, queryName } from "./type/queryType";
+import { availableQueryName} from "./type/queryType";
 
 
 export type queryInterface = {

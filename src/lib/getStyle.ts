@@ -13,7 +13,7 @@ export function getStyle(
             'Custom style object need at least one of available query name style object with at least one CSS property, not an empty object. If you want to use default style, do not add style object to library component'
         );
     for (const key of Object.keys(styleWithMedia)) {
-        if (queryNameCompare(current, key as keyof typeof styleWithMedia)){
+        if (queryNameCompare(current, key as keyof typeof styleWithMedia)) {
             break;
         }
         Object.assign(

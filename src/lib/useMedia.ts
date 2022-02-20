@@ -22,7 +22,7 @@ export default function useMedia(query?: queryInterface): availableQueryName {
             }
         }
         return () => window.removeEventListener('resize', handle);
-    });
+    }, [query, calculationQuery, width]);
     console.log(width);
     console.log(media);
     return media;
