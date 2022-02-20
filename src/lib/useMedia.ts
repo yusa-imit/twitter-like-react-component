@@ -8,7 +8,7 @@ export default function useMedia(query?: queryInterface): availableQueryName {
     const [calculationQuery, setCalculationQuery] = useState<queryInterface>(
         query ? query : mediaQuery
     );
-    useEffect((): ()=>void => {
+    useEffect((): (() => void) => {
         setCalculationQuery(query ? query : mediaQuery);
         function handle(): void {
             setWidth(window.innerWidth);
@@ -16,8 +16,10 @@ export default function useMedia(query?: queryInterface): availableQueryName {
         window.addEventListener('resize', handle);
         handle();
         console.log(window.innerWidth);
-        for(const key of Object.keys(calculationQuery)){
-            if (width >= calculationQuery[key as keyof typeof calculationQuery]) {
+        for (const key of Object.keys(calculationQuery)) {
+            if (
+                width >= calculationQuery[key as keyof typeof calculationQuery]
+            ) {
                 setMedia(key as keyof typeof calculationQuery);
             }
         }

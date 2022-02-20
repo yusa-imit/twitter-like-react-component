@@ -5,4 +5,4 @@ export const inlineStyleExample: mediaStyle = {
     md: {},
     lg: {},
     xl: {},
-}
+};

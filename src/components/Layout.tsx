@@ -13,7 +13,7 @@ export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
 
 export default function Layout(_props: LayoutProps): JSX.Element {
     const currentMedia = useMedia();
-    
+
     console.log(getStyle(currentMedia, gridStyle));
     return (
         <div style={getStyle(currentMedia, gridStyle)}>
