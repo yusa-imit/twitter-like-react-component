@@ -16,7 +16,6 @@ export default function useMedia(query?: queryInterface): availableQueryName {
         window.addEventListener('resize', handle);
         handle();
         console.log(window.innerWidth);
-        console.log(width);
         for(const key of Object.keys(calculationQuery)){
             if (width >= calculationQuery[key as keyof typeof calculationQuery]) {
                 setMedia(key as keyof typeof calculationQuery);
@@ -24,5 +23,7 @@ export default function useMedia(query?: queryInterface): availableQueryName {
         }
         return () => window.removeEventListener('resize', handle);
     });
+    console.log(width);
+    console.log(media);
     return media;
 }

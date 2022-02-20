@@ -1,11 +1,12 @@
-import { queryName } from "./type/queryType";
+import { availableQueryName, queryName } from "./type/queryType";
 
 
 export type queryInterface = {
-    [key in queryName]: number;
+    [key in availableQueryName]: number;
 };
 
 export const mediaQuery: queryInterface = {
+    "xs": 0,
     "sm": 500,
     "md": 1005,
     "lg": 1095,
