@@ -1,25 +1,53 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 import { getStyle } from '../lib/getStyle';
-import { queryInterface } from '../lib/media';
-import { mediaStyle } from '../lib/type/mediaStyle';
+import { LayoutProps } from './props/LayoutProps';
 import useMedia from '../lib/useMedia';
-import { gridStyle, mainStyle, navStyle, trendStyle } from './LayoutStyle';
+import {
+    gridStyle,
+    mainStyle,
+    navStyle,
+    asideStyle,
+} from './styles/LayoutStyle';
 
-export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
-    mediaQuery?: queryInterface;
-    mainStyle?: mediaStyle;
-    trendStyle?: mediaStyle;
-}
-
-export default function Layout(_props: LayoutProps): JSX.Element {
-    const currentMedia = useMedia();
-
-    console.log(getStyle(currentMedia, gridStyle));
+export default function Layout({
+    innerComponents,
+    attributes,
+    styles,
+    options,
+}: LayoutProps): JSX.Element {
+    const currentMedia = useMedia(
+        options?.mediaQuery ? options?.mediaQuery : undefined
+    );
     return (
-        <div style={getStyle(currentMedia, gridStyle)}>
-            <nav style={getStyle(currentMedia, navStyle)}></nav>
-            <main style={getStyle(currentMedia, mainStyle)}></main>
-            <aside style={getStyle(currentMedia, trendStyle)}></aside>
+        <div
+            style={getStyle(currentMedia, or(styles?.gridStyle, gridStyle))}
+            {...attributes?.gridAttributes}
+        >
+            <nav
+                style={getStyle(currentMedia, or(styles?.navStyle, navStyle))}
+                {...attributes?.navAttributes}
+            >
+                {innerComponents?.nav}
+            </nav>
+            <main
+                style={getStyle(currentMedia, or(styles?.mainStyle, mainStyle))}
+                {...attributes?.mainAttributes}
+            >
+                {innerComponents?.main}
+            </main>
+            <aside
+                style={getStyle(
+                    currentMedia,
+                    or(styles?.asideStyle, asideStyle)
+                )}
+                {...attributes?.asideAttributes}
+            >
+                {innerComponents?.aside}
+            </aside>
         </div>
     );
 }
+
+const or = (option: any, ifUndefined: any) => {
+    return option ? option : ifUndefined;
+};

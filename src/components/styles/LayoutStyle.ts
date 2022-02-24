@@ -1,4 +1,4 @@
-import { mediaStyle } from '../lib/type/mediaStyle';
+import { mediaStyle } from '../../lib/type/mediaStyle';
 
 export const gridStyle: mediaStyle = {
     xs: {
@@ -28,7 +28,7 @@ export const mainStyle: mediaStyle = {
         borderWidth: '0 1px',
     },
 };
-export const trendStyle: mediaStyle = {
+export const asideStyle: mediaStyle = {
     xs: {
         backgroundColor: 'green',
         display: 'none',
