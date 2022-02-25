@@ -1,20 +1,8 @@
 import React from 'react';
 import { getStyle } from '../lib/getStyle';
-import { mediaStyle } from '../lib/type/mediaStyle';
-import { availableQueryName } from '../lib/type/queryType';
+import { ButtonProps } from './props/ButtonProps';
 import { ButtonStyle, IconStyle, TextStyle } from './styles/ButtonStyle';
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-    icon?: JSX.Element | JSX.IntrinsicElements | SVGElement;
-    text?: string;
-    media: availableQueryName;
-    styles?: {
-        buttonStyle?: mediaStyle;
-        iconStyle?: mediaStyle;
-        textStyle?: mediaStyle;
-    };
-    options?: {};
-}
 
 export default function Button({
     icon,

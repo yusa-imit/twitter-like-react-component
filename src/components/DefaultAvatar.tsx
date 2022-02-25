@@ -1,24 +1,12 @@
-import React, { CSSProperties, useState } from 'react';
+import React, { useState } from 'react';
 import { getStyle } from '../lib/getStyle';
-import { mediaStyle } from '../lib/type/mediaStyle';
-import { availableQueryName } from '../lib/type/queryType';
+import { DefaultAvatarProps } from './props/DefaultAvatarProps';
 import {
     DefaultAvatarStyle,
     HoveredDefaultAvatarStyle,
 } from './styles/DefaultAvatarStyle';
 
-export interface DefaultAvatarProps
-    extends React.HTMLAttributes<HTMLDivElement> {
-    src?: string;
-    alt?: string;
-    media: availableQueryName;
-    styles?: mediaStyle;
-    options?: {
-        hoverAction?: boolean;
-        hoveredStyle?: mediaStyle;
-        innerImageStyle?: CSSProperties;
-    };
-}
+
 
 export default function DefaultAvatar({
     src,
