@@ -2,9 +2,13 @@
 
 This project aims to make 
 
-**easily developer configurable**
+**Easily Configurable**
 
-**customizable**
+**Customizable**
+
+**Responsive**
+
+**CSS Free**
 
 react component that looks like Twitter.
 
