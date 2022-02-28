@@ -1,5 +1,5 @@
 import React from 'react';
-import { getStyle, useMedia, or } from '../lib';
+import { getStyle, useMedia } from '../lib';
 import { LayoutProps } from './props/LayoutProps';
 import { mediaStyleSynthesis } from '../lib/mediaStyleSynthesis';
 import {
