@@ -15,7 +15,20 @@ react component that looks like Twitter.
 
 ## Currently
 
-Working in base function design
+Working on component implementation.
+
+
+You can test this library's alpha version by using
+
+```bash
+npm install tlrc
+```
+
+or
+
+```bash
+yarn add tlrc
+```
 
 ## Todos
 
