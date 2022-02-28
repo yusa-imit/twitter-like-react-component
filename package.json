@@ -1,8 +1,13 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.1-alpha.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/yusa-imit/twitter-like-react-component"
+  },
+  "homepage": "http://yusa-imit.github.io/twitter-like-react-component",
   "files": [
     "dist",
     "src"
@@ -20,7 +25,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "tsdx build",
-    "pretty": "yarn prettier --write src/**/* test/**/* stories/**/*"
+    "pretty": "yarn prettier --write src/**/* test/**/* stories/**/*",
+    "predeploy-storybook": "yarn build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -37,7 +44,7 @@
     "trailingComma": "es5",
     "tabWidth": 4
   },
-  "name": "twitter-like-react-template",
+  "name": "tlrc",
   "author": "yusa-imit",
   "module": "dist/twitter-like-react-template.esm.js",
   "size-limit": [
