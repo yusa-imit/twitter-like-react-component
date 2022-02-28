@@ -1,5 +1,5 @@
-import { queryInterface } from "../../lib/media";
-import { mediaStyle } from "../../lib/type/mediaStyle";
+import { queryInterface } from '../../lib/media';
+import { mediaStyle } from '../../lib/type/mediaStyle';
 
 export interface LayoutProps {
     innerComponents?: {

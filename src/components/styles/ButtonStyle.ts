@@ -19,11 +19,11 @@ export const IconStyle: mediaStyle = {
 
 export const TextStyle: mediaStyle = {
     xs: {
-        display: "none",
-        paddingRight: "15px",
-        marginLeft: "20px"
+        display: 'none',
+        paddingRight: '15px',
+        marginLeft: '20px',
     },
     sm: {
-        display: "block"
-    }
+        display: 'block',
+    },
 };

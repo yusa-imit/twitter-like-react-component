@@ -3,7 +3,6 @@ import { getStyle } from '../lib/getStyle';
 import { ButtonProps } from './props/ButtonProps';
 import { ButtonStyle, IconStyle, TextStyle } from './styles/ButtonStyle';
 
-
 export default function Button({
     icon,
     text,

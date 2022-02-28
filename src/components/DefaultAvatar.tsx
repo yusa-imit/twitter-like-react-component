@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
+import { eventStyleSynthesis } from '../lib/eventStyleSynthesis';
 import { getStyle } from '../lib/getStyle';
 import { DefaultAvatarProps } from './props/DefaultAvatarProps';
 import {
     DefaultAvatarStyle,
     HoveredDefaultAvatarStyle,
 } from './styles/DefaultAvatarStyle';
-
-
 
 export default function DefaultAvatar({
     src,
@@ -23,7 +22,18 @@ export default function DefaultAvatar({
         <div
             {...others}
             style={
-                hover
+                eventStyleSynthesis(
+                    hover,
+                    getStyle(media, styles ? styles : DefaultAvatarStyle),
+                    getStyle(
+                        media,
+                        options.hoveredStyle
+                            ? options.hoveredStyle
+                            : HoveredDefaultAvatarStyle
+                    )
+                )
+
+                /*hover
                     ? Object.assign(
                           getStyle(media, styles ? styles : DefaultAvatarStyle),
                           getStyle(
@@ -33,7 +43,7 @@ export default function DefaultAvatar({
                                   : HoveredDefaultAvatarStyle
                           )
                       )
-                    : getStyle(media, styles ? styles : DefaultAvatarStyle)
+                    : getStyle(media, styles ? styles : DefaultAvatarStyle)*/
             }
             onMouseEnter={() => {
                 setHover(options.hoverAction ? true : false);

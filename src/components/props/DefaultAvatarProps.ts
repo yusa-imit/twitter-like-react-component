@@ -1,6 +1,6 @@
-import { CSSProperties } from "react";
-import { mediaStyle } from "../../lib/type/mediaStyle";
-import { availableQueryName } from "../../lib/type/queryType";
+import { CSSProperties } from 'react';
+import { mediaStyle } from '../../lib/type/mediaStyle';
+import { availableQueryName } from '../../lib/type/queryType';
 
 export interface DefaultAvatarProps
     extends React.HTMLAttributes<HTMLDivElement> {
