@@ -26,7 +26,10 @@ export const mergeWithNew = (
     return newStyle;
 };
 
-const mergeCSS = (target: Object, source: Object | undefined): Object => {
+export const mergeCSS = (
+    target: Object,
+    source: Object | undefined
+): Object => {
     if (!source) return target;
     const newCSS: Object = {};
     for (const key of Object.keys(target)) {
@@ -42,6 +45,12 @@ const mergeCSS = (target: Object, source: Object | undefined): Object => {
             // @ts-ignore
             else newCSS[key] = source[key];
         }
+    }
+    for (const key of Object.keys(source).filter(
+        (v) => !Object.keys(target).includes(v)
+    )) {
+        // @ts-ignore
+        newCSS[key] = source[key];
     }
     return newCSS;
 };

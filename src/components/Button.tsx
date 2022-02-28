@@ -3,6 +3,7 @@ import { getStyle } from '../lib/getStyle';
 import { ButtonProps } from './props/ButtonProps';
 import { ButtonStyle, IconStyle, TextStyle } from './styles/ButtonStyle';
 import { mediaStyleSynthesis } from '../lib/mediaStyleSynthesis';
+import { mergeWithNew } from '../lib/mergeWithNew';
 
 export default function Button({
     icon,
@@ -31,7 +32,7 @@ export default function Button({
             <span
                 style={getStyle(
                     media,
-                    mediaStyleSynthesis(TextStyle, styles?.textStyle, options?.renewStyle)
+                    mediaStyleSynthesis(options?.neverShrink ? mergeWithNew(TextStyle, {xs: {display: "block"}}) : TextStyle, styles?.textStyle, options?.renewStyle)
                 )}
             >
                 {text}

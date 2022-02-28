@@ -12,5 +12,6 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     };
     options?: {
         renewStyle?: boolean;
+        neverShrink?: boolean;
     };
 }
