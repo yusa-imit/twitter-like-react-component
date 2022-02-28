@@ -1,31 +1,47 @@
 import { mediaStyle } from './type/mediaStyle';
 import { availableQueryName } from './type/queryType';
-import { CSSProperties } from 'react';
-export const mergeWithNew = (target: mediaStyle, source: mediaStyle | undefined): mediaStyle => {
+export const mergeWithNew = (
+    target: mediaStyle,
+    source: mediaStyle | undefined
+): mediaStyle => {
     if (!source) return target;
     const newStyle: mediaStyle = {};
-    const availableKeys: Array<availableQueryName> = ["xs", "sm", "md", "lg", "xl"];
-    for(const key of availableKeys){
-        if(target[key] === undefined){
-            if(source[key] === undefined) continue;
+    const availableKeys: Array<availableQueryName> = [
+        'xs',
+        'sm',
+        'md',
+        'lg',
+        'xl',
+    ];
+    for (const key of availableKeys) {
+        if (target[key] === undefined) {
+            if (source[key] === undefined) continue;
             newStyle[key] = source[key];
-        }
-        else{
-            newStyle[key] = Object.assign(target[key] as CSSProperties, source[key] as CSSProperties | undefined);
+        } else {
+            // @ts-ignore
+            newStyle[key] = mergeCSS(target[key], source[key]);
         }
     }
     console.log(newStyle);
     return newStyle;
-}
+};
 
-const mergeCSS = (target: CSSProperties, source: CSSProperties | undefined): CSSProperties => {
-    if(!source) return target;
-    const newCSS: CSSProperties = {};
-    for(const key of Object.keys(target) as Array<keyof CSSProperties>){
-        if(target[key] === undefined){
-            if(source[key] === undefined) continue;
+const mergeCSS = (target: Object, source: Object | undefined): Object => {
+    if (!source) return target;
+    const newCSS: Object = {};
+    for (const key of Object.keys(target)) {
+        //@ts-ignore
+        if (target[key] === undefined) {
+            //@ts-ignore
+            if (source[key] === undefined) continue;
+            //@ts-ignore
             newCSS[key] = source[key];
+        } else {
+            // @ts-ignore
+            if (source[key] === undefined) newCSS[key] = target[key];
+            // @ts-ignore
+            else newCSS[key] = source[key];
         }
     }
     return newCSS;
-}
+};
