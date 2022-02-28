@@ -1,11 +1,17 @@
+import useMedia from "./useMedia";
+
 // Library functions
 
 export { eventStyleSynthesis } from "./eventStyleSynthesis";
 export { getStyle } from "./getStyle";
 export { mediaQuery, queryInterface } from "./media";
+export { mediaStyleSynthesis } from "./mediaStyleSynthesis";
 export { or } from "./or";
 export { queryNamePriority } from "./queryNamePriority";
-export * from "./useMedia";
+
+// Hooks
+
+export { useMedia }
 
 // Types
 

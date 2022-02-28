@@ -2,9 +2,10 @@ import React from 'react';
 import { mediaStyle } from '../lib/type/mediaStyle';
 import { availableQueryName } from '../lib/type/queryType';
 import Button from './Button';
+import { IconButtonTextStyle } from './styles/IconButtonStyle';
 
 interface IconButtonProps {
-    icon: JSX.Element | JSX.IntrinsicElements | SVGElement;
+    icon: string;
     media: availableQueryName;
     styles?: {
         buttonStyle?: mediaStyle;
@@ -15,7 +16,13 @@ interface IconButtonProps {
 export default function IconButton({
     icon,
     media,
-    styles,
+    styles = {
+        buttonStyle: {
+            xs: {
+                borderRadius: "9999px",
+            }
+        }
+    },
 }: IconButtonProps): JSX.Element {
     return (
         <Button
@@ -24,7 +31,7 @@ export default function IconButton({
             styles={{
                 buttonStyle: styles?.buttonStyle,
                 iconStyle: styles?.iconStyle,
-                textStyle: { xs: { display: 'none' } },
+                textStyle: IconButtonTextStyle,
             }}
         />
     );

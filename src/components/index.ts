@@ -1,4 +1,6 @@
-export * from "./Button";
-export * from "./DefaultAvatar";
-export * from "./IconButton";
-export * from "./Layout";
+import Button from "./Button";
+import DefaultAvatar from "./DefaultAvatar";
+import IconButton from "./IconButton";
+import Layout from "./Layout";
+
+export {Button, DefaultAvatar, IconButton, Layout}

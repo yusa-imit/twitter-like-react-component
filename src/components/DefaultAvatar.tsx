@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { eventStyleSynthesis } from '../lib/eventStyleSynthesis';
 import { getStyle } from '../lib/getStyle';
 import { DefaultAvatarProps } from './props/DefaultAvatarProps';
+import { mediaStyleSynthesis } from '../lib/mediaStyleSynthesis';
 import {
     DefaultAvatarStyle,
     HoveredDefaultAvatarStyle,
@@ -24,12 +25,21 @@ export default function DefaultAvatar({
             style={
                 eventStyleSynthesis(
                     hover,
-                    getStyle(media, styles ? styles : DefaultAvatarStyle),
                     getStyle(
                         media,
-                        options.hoveredStyle
-                            ? options.hoveredStyle
-                            : HoveredDefaultAvatarStyle
+                        mediaStyleSynthesis(
+                            DefaultAvatarStyle,
+                            styles,
+                            options.renewStyle
+                        )
+                    ),
+                    getStyle(
+                        media,
+                        mediaStyleSynthesis(
+                            HoveredDefaultAvatarStyle,
+                            options.hoveredStyle,
+                            options.renewStyle
+                        )
                     )
                 )
 

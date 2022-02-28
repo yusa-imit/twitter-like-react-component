@@ -12,5 +12,6 @@ export interface DefaultAvatarProps
         hoverAction?: boolean;
         hoveredStyle?: mediaStyle;
         innerImageStyle?: CSSProperties;
+        renewStyle?: boolean;
     };
 }

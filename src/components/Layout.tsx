@@ -1,14 +1,13 @@
 import React from 'react';
-import { getStyle } from '../lib/getStyle';
+import { getStyle, useMedia, or } from '../lib';
 import { LayoutProps } from './props/LayoutProps';
-import useMedia from '../lib/useMedia';
+import { mediaStyleSynthesis } from '../lib/mediaStyleSynthesis';
 import {
     gridStyle,
     mainStyle,
     navStyle,
     asideStyle,
 } from './styles/LayoutStyle';
-import { or } from '../lib/or';
 
 export default function Layout({
     innerComponents,
@@ -21,17 +20,38 @@ export default function Layout({
     );
     return (
         <div
-            style={getStyle(currentMedia, or(styles?.gridStyle, gridStyle))}
+            style={getStyle(
+                currentMedia,
+                mediaStyleSynthesis(
+                    gridStyle,
+                    styles?.gridStyle,
+                    options?.renewStyle
+                )
+            )}
             {...attributes?.gridAttributes}
         >
             <nav
-                style={getStyle(currentMedia, or(styles?.navStyle, navStyle))}
+                style={getStyle(
+                    currentMedia,
+                    mediaStyleSynthesis(
+                        navStyle,
+                        styles?.navStyle,
+                        options?.renewStyle
+                    )
+                )}
                 {...attributes?.navAttributes}
             >
                 {innerComponents?.nav}
             </nav>
             <main
-                style={getStyle(currentMedia, or(styles?.mainStyle, mainStyle))}
+                style={getStyle(
+                    currentMedia,
+                    mediaStyleSynthesis(
+                        mainStyle,
+                        styles?.mainStyle,
+                        options?.renewStyle
+                    )
+                )}
                 {...attributes?.mainAttributes}
             >
                 {innerComponents?.main}
@@ -39,7 +59,11 @@ export default function Layout({
             <aside
                 style={getStyle(
                     currentMedia,
-                    or(styles?.asideStyle, asideStyle)
+                    mediaStyleSynthesis(
+                        asideStyle,
+                        styles?.asideStyle,
+                        options?.renewStyle
+                    )
                 )}
                 {...attributes?.asideAttributes}
             >

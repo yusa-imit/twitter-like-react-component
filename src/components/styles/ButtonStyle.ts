@@ -2,7 +2,14 @@ import { mediaStyle } from '../../lib/type/mediaStyle';
 
 export const ButtonStyle: mediaStyle = {
     xs: {
-        padding: '7px 0',
+        padding: '10px',
+        display: "flex",
+        flexDirection: "row",
+        width: "fit-content",
+        borderRadius: "20px/50%",
+        fontWeight: "bold",
+        backgroundColor: "#0000BC",
+        cursor: "pointer"
     },
 };
 
@@ -12,7 +19,7 @@ export const IconStyle: mediaStyle = {
         height: '26px',
         lineHeight: '26px',
         textAlign: 'center',
-        filter: 'grayscale(1) opacity(0.8)',
+        //filter: 'grayscale(1) opacity(0.8)',
         transition: '0.2s',
     },
 };

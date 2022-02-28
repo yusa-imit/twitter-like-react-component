@@ -42,5 +42,6 @@ export interface LayoutProps {
     };
     options?: {
         mediaQuery?: queryInterface;
+        renewStyle?: boolean;
     };
 }

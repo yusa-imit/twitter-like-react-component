@@ -2,6 +2,7 @@ import React from 'react';
 import { getStyle } from '../lib/getStyle';
 import { ButtonProps } from './props/ButtonProps';
 import { ButtonStyle, IconStyle, TextStyle } from './styles/ButtonStyle';
+import { mediaStyleSynthesis } from '../lib/mediaStyleSynthesis';
 
 export default function Button({
     icon,
@@ -16,21 +17,21 @@ export default function Button({
             {...others}
             style={getStyle(
                 media,
-                styles?.buttonStyle ? styles.buttonStyle : ButtonStyle
+                mediaStyleSynthesis(ButtonStyle, styles?.buttonStyle, options?.renewStyle)
             )}
         >
-            <span
+            <img
+                src={icon}
+                alt={"tlrc_button_component_icon"}
                 style={getStyle(
                     media,
-                    styles?.iconStyle ? styles.iconStyle : IconStyle
+                    mediaStyleSynthesis(IconStyle, styles?.iconStyle, options?.renewStyle)
                 )}
-            >
-                {icon}
-            </span>
+                />
             <span
                 style={getStyle(
                     media,
-                    styles?.textStyle ? styles.textStyle : TextStyle
+                    mediaStyleSynthesis(TextStyle, styles?.textStyle, options?.renewStyle)
                 )}
             >
                 {text}

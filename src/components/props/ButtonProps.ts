@@ -2,7 +2,7 @@ import { mediaStyle } from '../../lib/type/mediaStyle';
 import { availableQueryName } from '../../lib/type/queryType';
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-    icon?: JSX.Element | JSX.IntrinsicElements | SVGElement;
+    icon?: string;
     text?: string;
     media: availableQueryName;
     styles?: {
@@ -10,5 +10,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
         iconStyle?: mediaStyle;
         textStyle?: mediaStyle;
     };
-    options?: {};
+    options?: {
+        renewStyle?: boolean;
+    };
 }
