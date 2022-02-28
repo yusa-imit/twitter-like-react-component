@@ -8,6 +8,7 @@ import {
     navStyle,
     asideStyle,
 } from './styles/LayoutStyle';
+import { or } from '../lib/or';
 
 export default function Layout({
     innerComponents,
@@ -48,6 +49,4 @@ export default function Layout({
     );
 }
 
-const or = (option: any, ifUndefined: any) => {
-    return option ? option : ifUndefined;
-};
+
