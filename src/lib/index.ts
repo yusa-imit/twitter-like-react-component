@@ -8,6 +8,7 @@ export { mediaQuery, queryInterface } from "./media";
 export { mediaStyleSynthesis } from "./mediaStyleSynthesis";
 export { or } from "./or";
 export { queryNamePriority } from "./queryNamePriority";
+export { getColor, getTheme, setTheme } from "./theme";
 
 // Hooks
 
@@ -17,4 +18,4 @@ export { useMedia }
 
 export { mediaStyle } from "./type/mediaStyle"
 export { queryName, availableQueryName } from "./type/queryType";
-export { theme } from "./type/theme";
+export { GlobalTheme, ColorObject } from "./type/theme";
