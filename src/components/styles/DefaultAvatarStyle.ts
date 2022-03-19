@@ -9,7 +9,6 @@ export const DefaultAvatarStyle: mediaStyle = {
         alignItems: 'center',
         borderRadius: '9999px',
         overflow: 'hidden',
-        backgroundColor: '#fff',
     },
 };
 

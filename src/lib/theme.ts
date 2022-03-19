@@ -11,7 +11,7 @@ interface Options {
     storage: number;
 }
 
-function getStorage(storageOption?: number): Storage{
+function getStorage(storageOption?: number): Storage {
     switch (storageOption) {
         case 0 || undefined:
             return localStorage;
@@ -27,18 +27,17 @@ const DEFAULT_THEME: GlobalTheme = {
     primaryColor: 'blue',
 };
 
-export function setTheme(theme: GlobalTheme, options?: Options) {
-    getStorage(options?.storage).setItem('tlrc_global', JSON.stringify(theme));
+export function setTheme(theme: GlobalTheme, options?: number) {
+    getStorage(options).setItem('tlrc_global', JSON.stringify(theme));
 }
 
-export function getTheme(options?: Options): GlobalTheme {
-    if(options?.storage === 3) return DEFAULT_THEME;
-    const item = getStorage(options?.storage).getItem('tlrc_global');
+export function getTheme(options?: number): GlobalTheme {
+    if (options === 3) return DEFAULT_THEME;
+    const item = getStorage(options).getItem('tlrc_global');
     if (item === null) {
         setTheme(DEFAULT_THEME);
         return DEFAULT_THEME;
-    }
-    else return JSON.parse(item);
+    } else return JSON.parse(item);
 }
 
 export function getColor(
@@ -46,11 +45,14 @@ export function getColor(
     textColor?: string,
     subTextColor?: string,
     primaryColor?: string,
-    options?: Options
+    options?: number
 ): ColorObject {
     const theme = getTheme(options);
     return {
-        backgroundColor: or(backgroundColor, backgroundColors[theme.themeColor]),
+        backgroundColor: or(
+            backgroundColor,
+            backgroundColors[theme.themeColor]
+        ),
         textColor: or(textColor, textColors[theme.themeColor]),
         subTextColor: or(subTextColor, subTextColors[theme.themeColor]),
         primaryColor: or(primaryColor, primaryColors[theme.primaryColor]),
