@@ -20,19 +20,22 @@ export function defaultColorInit(
             cssObject.backgroundColor,
             options
         );
-        applyColor.forEach((v) => {
-            switch (v) {
-                case 'backgroundColor' || 'primaryColor':
-                    cssObject.backgroundColor = themeColor[v];
+        for (const applier of applyColor) {
+            switch (applier) {
+                case 'primaryColor':
+                case 'backgroundColor':
+                    cssObject.backgroundColor = themeColor[applier];
                     break;
-                case 'subTextColor' || 'textColor':
-                    cssObject.color = themeColor[v];
+                case 'subTextColor':
+                case 'textColor':
+                    cssObject.color = themeColor[applier];
                     break;
                 default:
                     break;
             }
-        });
-
+        }
+        console.log(themeColor);
+        console.log(cssObject.color);
         return cssObject;
     }
 }

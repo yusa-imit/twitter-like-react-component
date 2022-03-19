@@ -17,16 +17,13 @@ export default function Button({
     return (
         <button
             {...others}
-            style={defaultColorInit(
-                getStyle(
-                    media,
-                    mediaStyleSynthesis(
-                        ButtonStyle,
-                        styles?.buttonStyle,
-                        options?.renewStyle
-                    )
-                ),
-                ['backgroundColor', 'textColor']
+            style={getStyle(
+                media,
+                mediaStyleSynthesis(
+                    ButtonStyle,
+                    styles?.buttonStyle,
+                    options?.renewStyle
+                )
             )}
         >
             <img
