@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { eventStyleSynthesis } from '../lib/eventStyleSynthesis';
+import { eventStyleSelector } from '../lib/eventStyleSelector';
 import { getStyle } from '../lib/getStyle';
 import { DefaultAvatarProps } from './props/DefaultAvatarProps';
 import { mediaStyleSynthesis } from '../lib/mediaStyleSynthesis';
@@ -7,6 +7,7 @@ import {
     DefaultAvatarStyle,
     HoveredDefaultAvatarStyle,
 } from './styles/DefaultAvatarStyle';
+import { defaultColorInit } from '../lib/defaultColorInit';
 
 export default function DefaultAvatar({
     src,
@@ -23,24 +24,27 @@ export default function DefaultAvatar({
         <div
             {...others}
             style={
-                eventStyleSynthesis(
-                    hover,
-                    getStyle(
-                        media,
-                        mediaStyleSynthesis(
-                            DefaultAvatarStyle,
-                            styles,
-                            options.renewStyle
+                defaultColorInit(
+                    eventStyleSelector(
+                        hover,
+                        getStyle(
+                            media,
+                            mediaStyleSynthesis(
+                                DefaultAvatarStyle,
+                                styles,
+                                options.renewStyle
+                            )
+                        ),
+                        getStyle(
+                            media,
+                            mediaStyleSynthesis(
+                                HoveredDefaultAvatarStyle,
+                                options.hoveredStyle,
+                                options.renewStyle
+                            )
                         )
                     ),
-                    getStyle(
-                        media,
-                        mediaStyleSynthesis(
-                            HoveredDefaultAvatarStyle,
-                            options.hoveredStyle,
-                            options.renewStyle
-                        )
-                    )
+                    ['backgroundColor', 'textColor']
                 )
 
                 /*hover

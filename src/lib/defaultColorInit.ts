@@ -34,8 +34,6 @@ export function defaultColorInit(
                     break;
             }
         }
-        console.log(themeColor);
-        console.log(cssObject.color);
         return cssObject;
     }
 }

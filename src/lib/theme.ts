@@ -7,10 +7,6 @@ import {
 import { or } from './or';
 import { ColorObject, GlobalTheme } from './type/theme';
 
-interface Options {
-    storage: number;
-}
-
 function getStorage(storageOption?: number): Storage {
     switch (storageOption) {
         case 0 || undefined:

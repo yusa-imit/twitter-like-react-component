@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 import { mergeCSS } from './mergeWithNew';
 
-export const eventStyleSynthesis = (
+export const eventStyleSelector = (
     eventInBoolean: Boolean,
     defaultStyle: CSSProperties,
     eventStyle: CSSProperties
