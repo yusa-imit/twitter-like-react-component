@@ -4,7 +4,6 @@ import { ButtonProps } from './props/ButtonProps';
 import { ButtonStyle, IconStyle, TextStyle } from './styles/ButtonStyle';
 import { mediaStyleSynthesis } from '../lib/mediaStyleSynthesis';
 import { mergeWithNew } from '../lib/mergeWithNew';
-import { defaultColorInit } from '../lib/defaultColorInit';
 
 export default function Button({
     icon,

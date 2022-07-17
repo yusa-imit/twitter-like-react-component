@@ -13,7 +13,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<LayoutProps> = (args) => <Layout {...args}/>;
+const Template: Story<LayoutProps> = (args) => <Layout {...args} />;
 
 export const Default = Template.bind({});
 
